@@ -1,0 +1,20 @@
+<main class="basket">
+
+  <article *ngFor="let toy of selectedToys | async">
+    <i class="mdi {{toy.icon}}"></i>
+    <strong>{{toy.title}}</strong>
+    
+    <i class="mdi mdi-close-circle" (click)="remove(toy)"></i>
+    <span>{{toy.price | currency:'Eur':true:'1.2-2'}}</span>
+  </article>
+
+  <aside>
+    <strong>Total :</strong>
+    <span>{{totalPrice | async | currency:'Eur':true:'1.2-2'}}</span>
+  </aside>
+
+  <footer>
+    <button>> PAY !</button>
+  </footer>
+
+</main>

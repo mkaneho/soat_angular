@@ -1,0 +1,8 @@
+<main class="toy-page">
+
+  <app-toy 
+    *ngFor="let toy of toys | async"
+    [toy]="toy"
+    (toggleToySelected)="onToyClick($event)"></app-toy>
+
+</main>
